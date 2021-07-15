@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --bg: #242526;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
+  --nav-size: 60px;
+  --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 500ms;
+  --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --page-padding-x: calc((100vw - min(80vw, 75ch)) / 2);
+}
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.fadedown-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+.fadedown-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms var(--easing);
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms var(--easing);
+}
+
+.container {
+  position: relative;
+}
+
+.display {
+  position: relative;
+  z-index: 1;
+  width: 8em;
+  height: 40px;
+  background-color: #5a564c;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 350ms;
+}
+
+.display:active {
+  background-color: #000000;
+}
+
+.list-body {
+  position: absolute;
+  top: 45px;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 8em;
+  padding: 0 20px;
+  overflow: hidden;
+  background-color: var(--bg-accent);
+  border-radius: 5px;
+}
+
+.list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.list-item {
+  padding: 5px 0;
+  transition: 200ms ease-in;
+}
+
+.list-item--active {
+  color: blue;
+  transition: color 1500ms;
+}
+
+/* This fires as soon as the element enters the dorm */
+.list-transition-enter,
+.list-transition-appear {
+  /*We give the list the initial dimension of the list button*/
+  top: 0;
+  width: 7.2em;
+  max-height: 40px;
+  color: transparent;
+  background-color: #5a564c;
+}
+/* This is where we can add the transition*/
+.list-transition-enter-active,
+.list-transition-appear-active {
+  top: 45px;
+  width: 8em;
+  max-height: 200px;
+  background-color: var(--bg-accent);
+  transition: all 400ms;
+}
+
+/* This fires as soon as the this.state.showList is false */
+.list-transition-exit {
+  top: 45px;
+  width: 8em;
+  max-height: 200px;
+  background-color: var(--bg-accent);
+}
+/* fires as element leaves the DOM*/
+.list-transition-exit-active {
+  top: 0;
+  width: 7.2em;
+  max-height: 40px;
+  color: transparent;
+  background-color: transparent;
+  transition: all 400ms;
+}
+
+/* experience section animation */
+
+.experience-enter {
+  transform: translateX(100%);
+}
+.experience-enter-active {
+  transform: translateX(0%);
+}
+.experience-exit {
+  transform: translateX(-100%);
+}
