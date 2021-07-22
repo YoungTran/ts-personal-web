@@ -28,8 +28,8 @@ const listItem = {
 
 export const navLinks = [
   { url: '#experience', name: 'Experience' },
-  { url: '/projects', name: 'Projects' },
-  { url: '/contact', name: 'Contact' },
+  { url: '#projects', name: 'Projects' },
+  { url: '#contact', name: 'Contact' },
 ];
 
 const NavLinks = (): JSX.Element => {
@@ -37,7 +37,7 @@ const NavLinks = (): JSX.Element => {
     <StyledLinks variants={container} initial="hidden" animate="show">
       {navLinks.map((item, i) => (
         <motion.li key={i} variants={listItem}>
-          {item.name}
+          <a href={item.url}>{item.name}</a>
         </motion.li>
       ))}
     </StyledLinks>

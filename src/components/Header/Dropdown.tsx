@@ -51,9 +51,15 @@ const Dropdown = (): JSX.Element => {
       >
         <div className="list-body">
           <ul className="list">
-            <StyledListItem>Experience</StyledListItem>
-            <StyledListItem>Projects</StyledListItem>
-            <StyledListItem>Contact</StyledListItem>
+            <StyledListItem>
+              <a href="#experience"> Experience</a>
+            </StyledListItem>
+            <StyledListItem>
+              <a href="#projects"> Projects</a>
+            </StyledListItem>
+            <StyledListItem>
+              <a href="#contact"> Contact</a>
+            </StyledListItem>
           </ul>
         </div>
       </CSSTransition>
