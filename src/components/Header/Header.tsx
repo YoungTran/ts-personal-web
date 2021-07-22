@@ -40,9 +40,8 @@ const LogoWrapper = styled(motion.div)`
 const HeaderContainer = styled.div<{ fixed: boolean }>`
   background: ${(props) => (props.fixed ? 'rgba(0, 0, 0, 0.4)' : '')};
   padding: 1em clamp(2em, 14%, 13.5em);
-
   @media (max-width: 768px) {
-    padding: 1rem 3rem;
+    padding: 2rem 3rem;
   }
 `;
 
@@ -56,7 +55,7 @@ const Header = (): JSX.Element => {
       fixed={fixed}
       className={`${
         fixed ? 'fixed z-50 bg-transparent shadow-2xl blur w-full' : ''
-      } transition top-1 ease-in-out duration-500 `}
+      } transition ease-in-out duration-500`}
     >
       <StyledHeader>
         <LogoWrapper

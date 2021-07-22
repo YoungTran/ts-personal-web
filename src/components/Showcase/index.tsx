@@ -31,19 +31,22 @@ const ShowcaseList = ({
       <h1 className="text-2xl">Project Showcase</h1>
       <ShowcaseListWrapper>
         {repos &&
-          repos.map(({ name, description, html_url, img_src }, i) => {
-            if (i < 6) {
-              return (
-                <ShowcaseItem
-                  fullName={name}
-                  description={description}
-                  htmlUrl={html_url}
-                  imgSrc={img_src}
-                  key={name}
-                />
-              );
+          repos.map(
+            ({ name, description, html_url, img_src, languages }, i) => {
+              if (i < 6) {
+                return (
+                  <ShowcaseItem
+                    fullName={name}
+                    description={description}
+                    htmlUrl={html_url}
+                    imgSrc={img_src}
+                    languages={languages}
+                    key={name}
+                  />
+                );
+              }
             }
-          })}
+          )}
       </ShowcaseListWrapper>
     </ShowcaseWrapper>
   );

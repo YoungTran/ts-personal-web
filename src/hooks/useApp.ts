@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchRepositories, GithubRepo } from '../api/github';
 
 interface UseAppReturnValues {
@@ -37,14 +37,6 @@ const useApp = (): UseAppReturnValues => {
     }
   };
 
-  React.useEffect(() => {
-    fetchRepos(cachedRepos);
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
-
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
     if (currentScrollPos < 400) {
@@ -53,10 +45,17 @@ const useApp = (): UseAppReturnValues => {
       setAnimClass(true);
     }
   };
-  React.useEffect(() => {
+
+  useEffect(() => {
+    fetchRepos(cachedRepos);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
     window.addEventListener('scroll', handleScroll, false);
     return () => window.removeEventListener('scroll', handleScroll, false);
   }, []);
+
   return { loading, animClass, repos, error };
 };
 
