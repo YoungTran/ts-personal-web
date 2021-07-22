@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { StyledFullName } from './Header';
 
@@ -32,9 +33,23 @@ const StyledListItem = styled.li`
 `;
 const Dropdown = (): JSX.Element => {
   const [show, setShow] = React.useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onBodyClick = () => {
+      setShow(false);
+    };
+    document.body.addEventListener('click', onBodyClick, { capture: true });
+
+    return () => {
+      document.body.removeEventListener('click', onBodyClick, {
+        capture: true,
+      });
+    };
+  }, []);
 
   return (
-    <StyledContainer>
+    <StyledContainer ref={ref}>
       <StyledIconGroup>
         <StyledFullName>Young Tran</StyledFullName>
         <StyledCaretIcon
