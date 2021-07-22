@@ -49,6 +49,7 @@ const HeaderContainer = styled.div<{ fixed: boolean }>`
 const Header = (): JSX.Element => {
   const { isSm, isXs, fixed, divRef } = useHeader();
   const history = useHistory();
+
   return (
     <HeaderContainer
       ref={divRef}

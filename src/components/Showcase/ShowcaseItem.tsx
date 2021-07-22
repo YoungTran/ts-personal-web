@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-import { motion, useAnimation } from 'framer-motion';
-import React, { useEffect, useRef } from 'react';
-import useOnScreen from '../../hooks/useOnScreen';
+import { motion } from 'framer-motion';
+import useShowcaseItem from './useShowcaseItem';
 
 const ShowcaseCard = styled(motion.a)`
   display: flex;
@@ -37,23 +36,9 @@ interface ShowcaseItemProps {
 
 const ShowcaseItem = ({
   fullName,
-  // description,
   htmlUrl,
-}: // imgSrc,
-ShowcaseItemProps): JSX.Element => {
-  const divRef = useRef<HTMLAnchorElement>(null);
-  const isVisible = useOnScreen(divRef);
-  const controls = useAnimation();
-  const name = fullName
-    .split('-')
-    .map((str) => str.charAt(0).toUpperCase() + str.slice(1) + ' ');
-  useEffect(() => {
-    if (isVisible) {
-      setTimeout(() => {
-        controls.start('visible');
-      }, 100);
-    }
-  }, [isVisible]);
+}: ShowcaseItemProps): JSX.Element => {
+  const { divRef, controls, name } = useShowcaseItem(fullName);
 
   return (
     <ShowcaseCardContainer className="bg-gray-900 sm:p-5 p-4 sm:space-y-3 transition transform hover:-translate-y-2 cursor-pointer shadow-xl">
