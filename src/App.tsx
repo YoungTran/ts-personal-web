@@ -48,7 +48,7 @@ const App = (): JSX.Element => {
       <motion.div animate={{ opacity: loading ? 1 : 0 }}>
         <FullScreenLoader />
       </motion.div>
-      <Header />
+      {!loading && !error && <Header />}
       {!loading && !error && (
         <StyledApp>
           <Hero />
