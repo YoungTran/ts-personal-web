@@ -14,7 +14,7 @@ const ContactContainer = styled.div`
 
 const Contact = (): JSX.Element => {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <h1 className="text-2xl">Contact</h1>
       <div className="flex justify-center">
         <p className="sm:text-xl sm:text-center text-justify sm:w-2/3">

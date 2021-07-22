@@ -27,7 +27,7 @@ const ShowcaseList = ({
   repos: GithubRepo[] | undefined;
 }): JSX.Element => {
   return (
-    <ShowcaseWrapper className="space-y-10">
+    <ShowcaseWrapper className="space-y-10" id="projects">
       <h1 className="text-2xl">Project Showcase</h1>
       <ShowcaseListWrapper>
         {repos &&

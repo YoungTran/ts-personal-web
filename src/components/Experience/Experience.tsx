@@ -11,13 +11,14 @@ import Section from './Section';
 
 const ExperienceWrapper = styled.div`
   color: var(--text-color);
+  padding-top: 6em;
   min-height: calc(100vh);
 `;
 
 const Experience = (): JSX.Element => {
   return (
-    <ExperienceWrapper className="space-y-10">
-      <h1 className="text-3xl">Journey</h1>
+    <ExperienceWrapper className="space-y-10" id="experience">
+      <h1 className="text-2xl">Journey</h1>
       <Section
         title="2017 - 2018"
         subtitle="Self Study"
