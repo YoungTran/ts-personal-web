@@ -19,6 +19,9 @@ const ShowcaseWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  @media (max-width: 768px) {
+    padding-top: 2em;
+  }
 `;
 
 const ShowcaseList = ({

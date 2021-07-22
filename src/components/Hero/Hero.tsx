@@ -5,10 +5,6 @@ import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
 const StyledHero = styled(motion.div)`
-  min-height: calc(100vh);
-`;
-
-const Content = styled.div`
   padding-top: 6em;
   @media (max-width: 768px) {
     padding-top: 2em;
@@ -33,25 +29,23 @@ const Hero = (): JSX.Element => {
     <StyledHero
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 1.3 }}
+      transition={{ delay: 1 }}
     >
-      <Content>
-        <div className="sm:space-y-10 space-y-8">
-          <h1 className="text-3xl text-white">Hi there, my name is Young</h1>
-          <p className="text-white max-w-md">
-            I'm a Software Engineer residing in the Bay Area.
-            <br /> I'm currently working on user experience driven interfaces
-            and CI/CD pipelines at <FontAwesomeIcon icon={faAppleAlt} /> as a
-            Software Engineer.
-          </p>
+      <div className="sm:space-y-10 space-y-8">
+        <h1 className="text-3xl text-white">Hi there, my name is Young</h1>
+        <p className="text-white max-w-md">
+          I'm a Software Engineer residing in the Bay Area.
+          <br /> I'm currently working on user experience driven interfaces and
+          CI/CD pipelines at <FontAwesomeIcon icon={faAppleAlt} /> as a Software
+          Engineer.
+        </p>
 
-          <StyledImage
-            src="/young.png"
-            alt=""
-            className="filter grayscale rounded-lg"
-          />
-        </div>
-      </Content>
+        <StyledImage
+          src="/young.png"
+          alt=""
+          className="filter grayscale rounded-lg"
+        />
+      </div>
     </StyledHero>
   );
 };

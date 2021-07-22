@@ -13,6 +13,9 @@ const ExperienceWrapper = styled.div`
   color: var(--text-color);
   padding-top: 6em;
   min-height: calc(100vh);
+  @media (max-width: 768px) {
+    padding-top: 2em;
+  }
 `;
 
 const Experience = (): JSX.Element => {

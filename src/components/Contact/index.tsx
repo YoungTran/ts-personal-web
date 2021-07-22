@@ -10,6 +10,9 @@ const ContactContainer = styled.div`
   div {
     padding: 2em 0;
   }
+  @media (max-width: 768px) {
+    padding-top: 2em;
+  }
 `;
 
 const Contact = (): JSX.Element => {
