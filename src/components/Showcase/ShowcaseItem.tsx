@@ -59,7 +59,9 @@ const ShowcaseItem = ({
     >
       <ShowcaseCard className="bg-gray-900 sm:p-5 p-4 sm:space-y-3 transition transform hover:-translate-y-2 cursor-pointer shadow-xl">
         <h1 className="sm:text-xl text-gray-400">{name}</h1>
-        <div className="sm:text-sm">{Object.keys(languages).join(', ')}</div>
+        {languages ? (
+          <div className="sm:text-sm">{Object.keys(languages).join(', ')}</div>
+        ) : null}
       </ShowcaseCard>
     </ShowcaseAnimate>
   );
